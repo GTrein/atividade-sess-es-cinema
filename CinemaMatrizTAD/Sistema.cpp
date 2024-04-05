@@ -9,7 +9,6 @@ Sistema::Sistema()
 	cout << "Sistema rodando\n";
 }
 
-
 void Sistema::InicializarMatriz()
 {
 	for (int l = 0; l < 10; ++l) {
@@ -20,14 +19,13 @@ void Sistema::InicializarMatriz()
 	}
 }
 
-
 int Sistema::MenuInicial()
 {
 	int escolha;
 	system("cls");
 	cout << "===== Menu =====\n";
 	cout << "1 - Reservar assento.\n";
-	cout << "2 - Ver sessões.\n";
+	cout << "2 - Ver sessÃµes.\n";
 	cout << "3 - Entrar como administrador.\n";
 	cout << "4 - Sair.\n";
 	
@@ -67,18 +65,17 @@ void Sistema::Executar()
 			//encerrar programa
 			break;
 		default:
-			cout << "Escolha inválida.\n";
+			cout << "Escolha invÃ¡lida.\n";
 			break;
 		}
 	} while (escolha != 4);
 
 }
 
-
 int Sistema::ImprimirSalas()
 {
 	int escolha = 0;
-	cout << "\nqual sessão você quer ver?(1 ou 2):\n";
+	cout << "\nqual sessÃ£o vocÃª quer ver?(1 ou 2):\n";
 	cin >> escolha;
 	switch (escolha)
 	{
@@ -123,7 +120,7 @@ int Sistema::ImprimirSalas()
 		
 		break;
 	default:
-		cout << "Essa sessão não existe.\n";
+		cout << "Essa sessÃ£o nÃ£o existe.\n";
 		
 		return 0;
 		break;
@@ -131,12 +128,12 @@ int Sistema::ImprimirSalas()
 	}
 	return escolha;
 }
+
 void Sistema::MostrarSalas()
 {
 	ImprimirSalas();
 
 }
-
 
 void Sistema::ReservarAssento()
 {
@@ -153,19 +150,19 @@ void Sistema::ReservarAssento()
 	}
 	else if (sala == 1) {
 		if (sala1Ocupacao >= 150 && sala2Ocupacao < 150) {
-			cout << "A sessão 1 está lotada porém ainda há espaço na sessão 2!\n";
+			cout << "A sessÃ£o 1 estÃ¡ lotada porÃ©m ainda hÃ¡ espaÃ§o na sessÃ£o 2!\n";
 			return;
 		}else if (sala1Ocupacao >= 150 && sala2Ocupacao >= 150) {
-		cout << "As duas sessões estão lotadas, volte mais tarde.\n";
+		cout << "As duas sessÃµes estÃ£o lotadas, volte mais tarde.\n";
 		return;
 		}
 		else if (sala == 2) {
 			if (sala2Ocupacao >= 150 && sala1Ocupacao < 150) {
-				cout << "A sessão 1 está lotada porém ainda há espaço na sessão 2!\n";
+				cout << "A sessÃ£o 1 estÃ¡ lotada porÃ©m ainda hÃ¡ espaÃ§o na sessÃ£o 2!\n";
 				return;
 			}
 			else if (sala1Ocupacao >= 150 && sala2Ocupacao >= 150) {
-				cout << "As duas sessões estão lotadas, volte mais tarde.\n";
+				cout << "As duas sessÃµes estÃ£o lotadas, volte mais tarde.\n";
 				return;
 			}
 		}
@@ -177,7 +174,7 @@ void Sistema::ReservarAssento()
 	
 	if (numero < 1 || numero > 15 || numeroLetra > 9 || numeroLetra < 0)
 	{
-		cout << "esse assento não existe.\n";
+		cout << "esse assento nÃ£o existe.\n";
 		return;
 
 	}
@@ -185,7 +182,7 @@ void Sistema::ReservarAssento()
 	if (sala == 1)
 	{
 	if (sala1[numeroLetra][numero - 1].getOcupado() == true) {
-		cout << "esse assento está ocupado.\n";
+		cout << "esse assento estÃ¡ ocupado.\n";
 		return;
 	}
 		sala1[numeroLetra][numero - 1].setOcupado(true);
@@ -200,7 +197,7 @@ void Sistema::ReservarAssento()
 	}
 	else if (sala == 2) {
 	if (sala2[numeroLetra][numero - 1].getOcupado() == true) {
-		cout << "esse assento está ocupado.\n";
+		cout << "esse assento estÃ¡ ocupado.\n";
 		return;
 	}
 		sala2[numeroLetra][numero-1].setOcupado(true);
@@ -232,7 +229,7 @@ int Sistema::LetraPraNumero(char letra)
 void Sistema::PreencherSala()
 	{
 	int escolha = 0;
-	cout << "\nqual sessão você quer preencher?(uso apenas para testes)\n";
+	cout << "\nqual sessÃ£o vocÃª quer preencher?(uso apenas para testes)\n";
 	cin >> escolha;
 	switch (escolha)
 	{
@@ -264,7 +261,7 @@ void Sistema::PreencherSala()
 		return;
 		break;
 	default:
-		cout << "Essa sessão não existe.\n";
+		cout << "Essa sessÃ£o nÃ£o existe.\n";
 		return;
 		break;
 
@@ -272,21 +269,19 @@ void Sistema::PreencherSala()
 	}
 }
 
-
-
-
 int Sistema::MenuAdministrador()
 {
 	int escolha;
 	system("cls");
 	cout << "=== Administrador ===\n";
 	cout << "1 - Preencher sala.\n";
-	cout << "2 - Informações da reserva.\n";
+	cout << "2 - InformaÃ§Ãµes da reserva.\n";
 	cout << "3 - Cancelar reserva.\n";
 	cout << "4 - Sair.\n";
 	cin >> escolha;
 	return escolha;
 }
+
 void Sistema::Administrador()
 {
 	int escolha;
@@ -315,12 +310,11 @@ void Sistema::Administrador()
 		//encerrar programa
 		break;
 	default:
-		cout << "Escolha inválida.\n";
+		cout << "Escolha invÃ¡lida.\n";
 		break;
 	}
  }while(escolha != 4);
 }
-
 
 void Sistema::infoReserva()
 {
@@ -344,17 +338,17 @@ void Sistema::infoReserva()
 		cin >> numero;
 		if (numero < 1 || numero > 15 || numeroLetra > 9 || numeroLetra < 0)
 		{
-			cout << "esse assento não existe.\n";
+			cout << "esse assento nÃ£o existe.\n";
 			return;
 
 		}
 		else if (sala2[numeroLetra][numero - 1].getOcupado() == false) {
-			cout << "esse assento está vazio.\n";
+			cout << "esse assento estÃ¡ vazio.\n";
 			return;
 		}
 		nome = sala1[numeroLetra][numero - 1].getNome();
 		cpf = sala1[numeroLetra][numero - 1].getCPF();
-		cout << "O assento " << letra << numero - 1 << " está reservado para " << nome << " com o cpf: " << cpf << ".\n";
+		cout << "O assento " << letra << numero - 1 << " estÃ¡ reservado para " << nome << " com o cpf: " << cpf << ".\n";
 		return;
 		break;
 	case 2:
@@ -365,21 +359,21 @@ void Sistema::infoReserva()
 		cin >> numero;
 		if (numero < 1 || numero > 15 || numeroLetra > 9 || numeroLetra < 0)
 		{
-			cout << "esse assento não existe.\n";
+			cout << "esse assento nÃ£o existe.\n";
 			return;
 
 		}
 		else if (sala2[numeroLetra][numero - 1].getOcupado() == false) {
-			cout << "esse assento está vazio.\n";
+			cout << "esse assento estÃ¡ vazio.\n";
 			return;
 		}
 		nome = sala2[numeroLetra][numero - 1].getNome();
 		cpf = sala2[numeroLetra][numero - 1].getCPF();
-		cout << "O assento " << letra << numero - 1 << " está reservado para " << nome << " com o cpf: " << cpf << ".\n";
+		cout << "O assento " << letra << numero - 1 << " estÃ¡ reservado para " << nome << " com o cpf: " << cpf << ".\n";
 		return;
 		break;
 	default:
-		cout << "Essa sessão não existe.\n";
+		cout << "Essa sessÃ£o nÃ£o existe.\n";
 		Sleep(1000);
 		break;
 	}
@@ -405,12 +399,12 @@ void Sistema::cancelarReserva()
 		cin >> numero;
 		if (numero < 1 || numero > 15 || numeroLetra > 9 || numeroLetra < 0)
 		{
-			cout << "esse assento não existe.\n";
+			cout << "esse assento nÃ£o existe.\n";
 			return;
 
 		}
-		else if (sala2[numeroLetra][numero - 1].getOcupado() == false) {
-			cout << "esse assento não estava ocupado.\n";
+		else if (sala1[numeroLetra][numero - 1].getOcupado() == false) {
+			cout << "esse assento nÃ£o estava ocupado.\n";
 			return;
 		}
 		sala1[numeroLetra][numero - 1].setOcupado(false);
@@ -418,7 +412,7 @@ void Sistema::cancelarReserva()
 		sala1[numeroLetra][numero - 1].setSprite("(-)");
 		sala1[numeroLetra][numero - 1].setNome("");
 		sala1[numeroLetra][numero - 1].setCPF("");
-		cout << "Reserva " << letra << numero - 1 << " foi cancelada com sucesso!\n";
+		cout << "Reserva " << letra << numero << " foi cancelada com sucesso!\n";
 		return;
 		break;
 	case 2:
@@ -429,12 +423,12 @@ void Sistema::cancelarReserva()
 		cin >> numero;
 		if (numero < 1 || numero > 15 || numeroLetra > 9 || numeroLetra < 0)
 		{
-			cout << "esse assento não existe.\n";
+			cout << "esse assento nÃ£o existe.\n";
 			return;
 
 		}
 		else if (sala2[numeroLetra][numero - 1].getOcupado() == false) {
-			cout << "esse assento não estava ocupado.\n";
+			cout << "esse assento nÃ£o estava ocupado.\n";
 				return;
 		}
 		sala2[numeroLetra][numero - 1].setOcupado(false);
@@ -442,11 +436,11 @@ void Sistema::cancelarReserva()
 		sala2[numeroLetra][numero - 1].setSprite("(-)");
 		sala2[numeroLetra][numero - 1].setNome("");
 		sala2[numeroLetra][numero - 1].setCPF("");
-		cout << "Reserva " << letra << numero - 1 << " foi cancelada com sucesso!\n";
+		cout << "Reserva " << letra << numero  << " foi cancelada com sucesso!\n";
 		return;
 		break;
 	default:
-		cout << "Essa sessão não existe.\n";
+		cout << "Essa sessÃ£o nÃ£o existe.\n";
 		
 		break;
 
